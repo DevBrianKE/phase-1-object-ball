@@ -124,9 +124,10 @@ console.log(gameObject()['home']['players']['Alan Anderson']);
 console.log(gameObject()['home']['players']['Brook Lopez']);
 console.log(gameObject()['home']['players']['Brook Lopez']['assists']);
 
-console.table(gameObject())
-console.table(gameObject()['home'])
-console.table(gameObject()['away'])
-console.table(gameObject()['away']['colors'])
-console.table(gameObject()['home']['players'])
-console.table(gameObject()['home']['players']['Alan Anderson'])
+function homeTeamName() {
+  let object = gameObject();
+  return object["home"]["teamName"];
+}
+
+console.log(homeTeamName())
+
