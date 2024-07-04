@@ -131,3 +131,17 @@ function homeTeamName() {
 
 console.log(homeTeamName())
 
+function numPointsScored(playerName) {
+  const game = gameObject();
+  for (let team in game) {
+    const players = game[team].players;
+    if (players[playerName]) {
+      return players[playerName].points;
+    }
+  }
+  return null;
+}
+
+console.log(numPointsScored("Alan Anderson")); 
+console.log(numPointsScored("Jeff Adrien"));  
+
