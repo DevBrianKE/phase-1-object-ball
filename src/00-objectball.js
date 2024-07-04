@@ -145,3 +145,17 @@ function numPointsScored(playerName) {
 console.log(numPointsScored("Alan Anderson")); 
 console.log(numPointsScored("Jeff Adrien"));  
 
+function shoeSize(playerName) {
+  const game = gameObject();
+  for (let team in game) {
+    const players = game[team].players;
+    if (players[playerName]) {
+      return players[playerName].shoe;
+    }
+  }
+  return null;
+}
+
+console.log(shoeSize("Alan Anderson")); 
+console.log(shoeSize("Jeff Adrien"));  
+console.log(shoeSize("Nonexistent Player")); 
