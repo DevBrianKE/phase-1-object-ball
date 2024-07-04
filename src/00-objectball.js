@@ -173,3 +173,37 @@ function teamColors(teamName) {
 console.log(teamColors("Brooklyn Nets")); 
 console.log(teamColors("Charlotte Hornets")); 
 console.log(teamColors("Nonexistent Team")); 
+
+function playerNumbers(teamName) {
+  const game = gameObject();
+  for (const team in game) {
+    if (game[team].teamName === teamName) {
+      return Object.values(game[team].players).map(player => player.number);
+    }
+  }
+  return null;
+}
+
+console.log(playerNumbers("Brooklyn Nets")); 
+
+function playerStats(playerName) {
+  const game = gameObject() 
+  for (let team in game) {
+    const players = game[team].players
+    if (game[team].players === playerName) {
+      return players[playerName];
+    }
+  }
+}
+
+function playerStats(playerName) {
+  const game = gameObject();
+
+  for (let team in game) {
+    const players = game[team].players;
+    if (players[playerName]) {
+      return players[playerName];
+    }
+  }
+
+  return null; 
