@@ -207,3 +207,23 @@ function playerStats(playerName) {
   }
 
   return null; 
+}
+
+function bigShoeRebounds() {
+  const game = gameObject()
+  let largestShoeSize = 0;
+  let rebounds = 0
+
+  for (let team in game) {
+    const players = game[team].players
+    for (let player in players) {
+      if (players[player].shoe > largestShoeSize){
+        largestShoeSize = players[player].shoe
+        rebounds = players[player].rebounds;
+      }
+    }
+  }
+  return rebounds
+}
+
+console.log(bigShoeRebounds())
