@@ -125,8 +125,8 @@ console.log(gameObject()['home']['players']['Brook Lopez']);
 console.log(gameObject()['home']['players']['Brook Lopez']['assists']);
 
 function homeTeamName() {
-  let object = gameObject();
-  return object["home"]["teamName"];
+  let game = gameObject();
+  return game["home"]["teamName"];
 }
 
 console.log(homeTeamName())
@@ -159,3 +159,17 @@ function shoeSize(playerName) {
 console.log(shoeSize("Alan Anderson")); 
 console.log(shoeSize("Jeff Adrien"));  
 console.log(shoeSize("Nonexistent Player")); 
+
+function teamColors(teamName) {
+  const game = gameObject();
+  for (let team in game) {
+    if (game[team].teamName === teamName) {
+      return game[team].colors;
+    }
+  }
+  return null;
+}
+
+console.log(teamColors("Brooklyn Nets")); 
+console.log(teamColors("Charlotte Hornets")); 
+console.log(teamColors("Nonexistent Team")); 
