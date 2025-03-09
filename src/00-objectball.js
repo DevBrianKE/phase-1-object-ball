@@ -135,8 +135,14 @@ console.log("Away Team Colors:", game.away.colors);
 console.log("Away Team Players:", game.away.players);
 
 // Function to retrieve the home team's name from the game object
+// function homeTeamName() {
+//   let object = gameObject()
+//   return object["home"]["teamName"]
+// }
+// console.log(homeTeamName());
+
 function homeTeamName() {
-  let object = gameObject()
-  return object["home"]["teamName"]
+  return gameObject()["home"]["teamName"];
 }
+
 console.log(homeTeamName());
