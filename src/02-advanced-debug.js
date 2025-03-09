@@ -26,3 +26,30 @@ function goodPractices() {
 
 // then, call the function so it runs!
 goodPractices()
+
+
+function numPointsScored(playerName) {
+  let game = gameObject();
+
+  for (let gameKey in game) {
+    let teamObj = game[gameKey];
+
+    for (let teamKey in teamObj) {
+      if (teamKey === "players") {
+        let players = teamObj[teamKey];
+
+        for (let name in players) {
+          if (name === playerName) {
+            debugger; 
+            return players[name].points;
+          }
+        }
+      }
+    }
+  }
+  return null; // If player is not found
+}
+
+
+console.log(numPointsScored("Alan Anderson")); 
+console.log(numPointsScored("Jeff Adrien")); 
