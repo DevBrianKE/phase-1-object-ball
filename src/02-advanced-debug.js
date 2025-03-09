@@ -28,6 +28,7 @@ function goodPractices() {
 goodPractices()
 
 
+
 function numPointsScored(playerName) {
   let game = gameObject();
 
@@ -53,3 +54,30 @@ function numPointsScored(playerName) {
 
 console.log(numPointsScored("Alan Anderson")); 
 console.log(numPointsScored("Jeff Adrien")); 
+
+
+// Function to get a player's shoe size
+function shoeSize(playerName) {
+  let game = gameObject();
+  
+  for (let gameKey in game) {
+    let teamObj = game[gameKey];
+
+    for (let teamKey in teamObj) {
+      let data = teamObj.players;
+
+      for (let player in data) {
+        debugger; // Check player names in the loop
+
+        if (player === playerName) {
+          return data[player].shoeSize;
+        }
+      }
+    }
+  }
+
+  return `Player ${playerName} not found.`;
+}
+
+shoeSize("Alan Anderson")
+shoeSize("Jeff Adrien")
